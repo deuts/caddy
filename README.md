@@ -4,7 +4,7 @@ This repository provides a Dockerfile that builds a custom version of the [Caddy
 
 ## Why Use This?
 
-When using Caddy's automatic HTTPS capabilities, the HTTP and TLS challenges are sufficient for most use cases. However, if your server is behind a firewall, load balancer, or you don't want to expose port 80/443 to the public internet, the **DNS challenge** is a better option. This Dockerfile extends the official Caddy image by integrating the `xcaddy` tool to build Caddy with the `cloudflare` DNS provider module.
+When using Caddy's automatic HTTPS capabilities, the HTTP and TLS challenges are sufficient for most use cases. However, if your server is behind a firewall, CGNAT, load balancer, or you don't want to expose port 80/443 to the public internet, the **DNS challenge** is a better option. This Dockerfile extends the official Caddy image by integrating the `xcaddy` tool to build Caddy with the `cloudflare` DNS provider module.
 
 With this setup, you can use Cloudflare's API to verify domain ownership and automatically obtain certificates for your domain(s).
 
