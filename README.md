@@ -24,3 +24,4 @@ This is optional, but I always liked to create a custom Docker bridge network so
 ```bash
 docker network create caddynetwork
 ```
+If you don't want to create a caddynetwork, or you're using a different name, be sure to make the necessary changes in the `compose.yml` file.
