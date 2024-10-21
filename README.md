@@ -39,7 +39,24 @@ Make the necessary changes to the environments:
       - CADDY_ACME_EMAIL=<ENTER YOUR EMAIL HERE>
 ```
 
+- `CLOUDFLARE_API_TOKEN`: This is your Cloudflare API token. It must have permissions for DNS zone edits.
+
 ### Build and run
 ```bash
 docker compose up -d --build
 ```
+
+### Edit Caddyfile
+Make the necessary changes to the Caddyfile:
+```Caddyfile
+# This is just an example Caddyfile content. Modify it to your liking.
+example.com {
+  reverse_proxy localhost:8080
+  tls {
+    dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+  }
+}
+```
+- Change `example.com` to your domain/subdomain whose DNS `A` record is pointing to the public IP address of your VPS/server
+- Change localhost to the `container_name` or IP of your service
+- Change `8080` to the port at which your container is running on
