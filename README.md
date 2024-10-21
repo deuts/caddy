@@ -38,3 +38,8 @@ Make the necessary changes to the environments:
       - CLOUDFLARE_API_TOKEN=<ENTER YOUR TOKEN HERE>
       - CADDY_ACME_EMAIL=<ENTER YOUR EMAIL HERE>
 ```
+
+### Build and run
+```bash
+docker compose up -d --build
+```
