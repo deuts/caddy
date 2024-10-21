@@ -1,0 +1,23 @@
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: caddy
+    environment:
+      - CLOUDFLARE_API_TOKEN=<ENTER YOUR TOKEN HERE>
+      - CADDY_ACME_EMAIL=<ENTER YOUR EMAIL HERE>
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data:/data
+      - ./config:/config
+    restart: unless-stopped
+    networks:
+      - caddynetwork
+
+networks:
+  caddynetwork:
+    external: true
