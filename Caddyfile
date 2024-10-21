@@ -1,0 +1,6 @@
+example.com {
+  reverse_proxy localhost:8080
+  tls {
+    dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+  }
+}
