@@ -25,3 +25,16 @@ This is optional, but I always liked to create a custom Docker bridge network so
 docker network create caddynetwork
 ```
 If you don't want to create a caddynetwork, or you're using a different name, be sure to make the necessary changes in the `compose.yml` file.
+
+#### Clone the repository
+```bash
+git clone https://github.com/deuts/caddy.git
+```
+
+### Edit `compose.yml`
+Make the necessary changes to the environments:
+```yml
+    environment:
+      - CLOUDFLARE_API_TOKEN=<ENTER YOUR TOKEN HERE>
+      - CADDY_ACME_EMAIL=<ENTER YOUR EMAIL HERE>
+```
