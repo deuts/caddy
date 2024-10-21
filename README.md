@@ -60,3 +60,6 @@ example.com {
 - Change `example.com` to your domain/subdomain whose DNS `A` record is pointing to the public IP address of your VPS/server
 - Change localhost to the `container_name` or IP of your service
 - Change `8080` to the port at which your container is running on
+
+## Next up
+Manage your Caddyfile using [Upcaddy](https://github.com/deuts/upcaddy).
