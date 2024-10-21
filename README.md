@@ -15,14 +15,12 @@ The Dockerfile is composed of two stages:
 1. **Builder Stage**: The Caddy executable is built using `xcaddy`, with the Cloudflare DNS module added as a plugin.
 2. **Final Stage**: The custom-built Caddy binary is copied into a fresh Caddy image to ensure a lean and production-ready image.
 
-## Dockerfile
+## Usage
 
-```Dockerfile
-FROM caddy:builder AS builder
+### Prepare
 
-RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare
-
-FROM caddy:latest
-
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+#### Create a caddynetwork
+This is optional, but I always liked to create a custom Docker bridge network so I don't have to expose my services' ports to the host, especially if I'm running this on a VPS with a public IP address:
+```bash
+docker network create caddynetwork
+```
