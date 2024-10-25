@@ -32,7 +32,7 @@ git clone https://github.com/deuts/caddy.git
 ```
 
 ### Edit `compose.yml`
-Make the necessary changes to the environments:
+Rename `_compose.yml` to `compose.yml` and make the necessary changes to the environments:
 ```yml
     environment:
       - CLOUDFLARE_API_TOKEN=<ENTER YOUR TOKEN HERE>
